@@ -1,4 +1,4 @@
-package com.example.chs_project.ui.home;
+package com.example.chs_project.ui.gyroscope;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -9,14 +9,14 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class GyroscopeViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
     private SensorManager sensorManager;
     private Sensor gyroscopeSensor;
 
     SensorEventListener gyroscopeSensorListener;
-    public HomeViewModel() {
+    public GyroscopeViewModel() {
         mText = new MutableLiveData<>();
         initializeGyroscopeListener();
     }

@@ -1,4 +1,4 @@
-package com.example.chs_project.ui.home;
+package com.example.chs_project.ui.gyroscope;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,23 +9,24 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import com.example.chs_project.databinding.FragmentHomeBinding;
+import com.example.chs_project.databinding.FragmentGyroscopeBinding;
 
-public class HomeFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
-    private HomeViewModel homeViewModel;
+public class GyroscopeFragment extends Fragment {
+
+    private FragmentGyroscopeBinding binding;
+    private GyroscopeViewModel gyroscopeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        gyroscopeViewModel = new ViewModelProvider(this).get(GyroscopeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentGyroscopeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        gyroscopeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
@@ -34,13 +35,13 @@ public class HomeFragment extends Fragment {
         super.onResume();
         Context context = getContext();
         if(context != null)
-            homeViewModel.startListeningToSensors(getContext());
+            gyroscopeViewModel.startListeningToSensors(getContext());
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        homeViewModel.stopListeningToSensors();
+        gyroscopeViewModel.stopListeningToSensors();
     }
 
     @Override

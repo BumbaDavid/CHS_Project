@@ -1,6 +1,10 @@
 package com.example.chs_project;
 
 import android.os.Bundle;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -29,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        if(!Places.isInitialized()) {
+            Places.initialize(getApplicationContext(),"AIzaSyAaBCyG6aDqpEEKY_-D1BbckFTjy4v9XnM");
+            PlacesClient pCLient = Places.createClient(this);
+        }
     }
 
 }

@@ -3,4 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="calculate_route">Calculate Route</string>
+    <string name="autocomplete_fragment">Start Location</string>
+    <string name="end_location">End Location</string>
+    <string name="google_maps_key">AIzaSyAaBCyG6aDqpEEKY_-D1BbckFTjy4v9XnM</string>
+    <string name="current_location">Activate Location</string>
 </resources>
